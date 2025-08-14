@@ -17,19 +17,18 @@ public class Login extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setEnabled(true);
 
-        String usuario = textField1.getText();
+        String user = textField1.getText();
         String clave = new String(passwordField1.getPassword());
 
         ingresarButton.addActionListener(e ->  {
-            if (textField1.isEmpty() || passwordField1.isEmpty()){
-                JOptionPane.showMessageDialog(null," Usuario o Contraseña incompletos");
-            } else {
-                if (usuario.equals("admin") && clave.equals("admin123")){
-                    new Sistema().setVisible(true);
+            if (user.equals("admin") && clave.equals("admin123")) {
+                new Sistema().setVisible(true);
 
-                } else {
-                    JOptionPane.showMessageDialog(null," Usuario o Contraseña incorrectos");
-                }
+            }else if (user.isEmpty() || clave.isEmpty()) {
+                JOptionPane.showMessageDialog(null, " Usuario o Contraseña incompletos");
+
+            }else {
+                JOptionPane.showMessageDialog(null," Usuario o Contraseña incorrectos");
             }
 
         });
