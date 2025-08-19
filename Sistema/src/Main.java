@@ -1,8 +1,9 @@
-import javax.swing.*;
+import Login.login;
+import conexion.Conexion;
 
 public class Main {
     public static void main(String[] args) {
-        new Login().setVisible(true);
+        new login().setVisible(true);
         new Conexion();
     }
 }

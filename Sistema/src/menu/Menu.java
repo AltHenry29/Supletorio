@@ -1,16 +1,21 @@
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+package menu;
 
-public class Sistema extends JFrame{
+import Login.login;
+import cliente.Cliente;
+import factura.Factura;
+import producto.Producto;
+
+import javax.swing.*;
+
+public class Menu extends JFrame{
     private JButton clientesButton;
-    private JPanel panel1;
+    private JPanel panelm;
     private JButton productosButton;
     private JButton facturaButton;
     private JButton salirButton;
 
-    public Sistema(){
-        setContentPane(panel1);
+    public Menu(){
+        setContentPane(panelm);
         setTitle("Menu");
         setSize(400,600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -18,19 +23,19 @@ public class Sistema extends JFrame{
 
 
         clientesButton.addActionListener(e ->  {
-
+            new Cliente().setVisible(true);
         });
 
         productosButton.addActionListener(e ->  {
-
+            new Producto().setVisible(true);
         });
 
         facturaButton.addActionListener(e ->  {
-
+            new Factura().setVisible(true);
         });
 
         salirButton.addActionListener(e ->  {
-
+            new login().setVisible(true);
         });
 
 
