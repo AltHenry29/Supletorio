@@ -77,3 +77,34 @@ public class Cliente extends JFrame {
     }
 }
 
+/*
+* // Buscar cliente
+public Cliente buscarCliente(String identificacion) {
+    String sql = "SELECT * FROM clientes WHERE identificacion=?";
+    try (Connection conn = ConexionBD.conectar();
+         PreparedStatement ps = conn.prepareStatement(sql)) {
+        ps.setString(1, identificacion);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            return new Cliente(rs.getInt("id"), rs.getString("identificacion"), rs.getString("nombre"));
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return null;
+}
+
+// Insertar cliente
+public void registrarCliente(String identificacion, String nombre) {
+    String sql = "INSERT INTO clientes(identificacion,nombre) VALUES(?,?)";
+    try (Connection conn = ConexionBD.conectar();
+         PreparedStatement ps = conn.prepareStatement(sql)) {
+        ps.setString(1, identificacion);
+        ps.setString(2, nombre);
+        ps.executeUpdate();
+        JOptionPane.showMessageDialog(null, "Cliente registrado con éxito");
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
+    }
+}
+ */

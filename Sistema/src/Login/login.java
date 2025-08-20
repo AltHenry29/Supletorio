@@ -57,3 +57,18 @@ public class login extends JFrame {
     }
 
 }
+
+/* public boolean validarLogin(String usuario, String pass) {
+    String sql = "SELECT * FROM usuarios WHERE usuario=? AND pass=? AND activo=1";
+    try (Connection conn = ConexionBD.conectar();
+         PreparedStatement ps = conn.prepareStatement(sql)) {
+        ps.setString(1, usuario);
+        ps.setString(2, pass);
+        ResultSet rs = ps.executeQuery();
+        return rs.next();  // true si encuentra usuario
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return false;
+}
+ */

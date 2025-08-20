@@ -98,3 +98,47 @@ public class Factura extends JFrame {
     }
 }
 
+/*public void registrarFactura(int idCliente, List<Producto> productos) {
+    String sqlFactura = "INSERT INTO facturas(id_cliente, subtotal, descuento, total) VALUES(?,?,?,?)";
+    String sqlDetalle = "INSERT INTO detalle_factura(id_factura,id_producto,cantidad,precio_unitario,total_linea) VALUES(?,?,?,?,?)";
+
+    try (Connection conn = ConexionBD.conectar()) {
+        conn.setAutoCommit(false); // transacción
+
+        double subtotal = productos.stream().mapToDouble(p -> p.getPrecio() * p.getCantidad()).sum();
+        double descuento = subtotal * 0.15;
+        double total = subtotal - descuento;
+
+        // Insertar cabecera
+        PreparedStatement psFactura = conn.prepareStatement(sqlFactura, Statement.RETURN_GENERATED_KEYS);
+        psFactura.setInt(1, idCliente);
+        psFactura.setDouble(2, subtotal);
+        psFactura.setDouble(3, descuento);
+        psFactura.setDouble(4, total);
+        psFactura.executeUpdate();
+
+        ResultSet rs = psFactura.getGeneratedKeys();
+        rs.next();
+        int idFactura = rs.getInt(1);
+
+        // Insertar detalle
+        PreparedStatement psDetalle = conn.prepareStatement(sqlDetalle);
+        for (Producto p : productos) {
+            psDetalle.setInt(1, idFactura);
+            psDetalle.setInt(2, p.getId());
+            psDetalle.setInt(3, p.getCantidad());
+            psDetalle.setDouble(4, p.getPrecio());
+            psDetalle.setDouble(5, p.getCantidad() * p.getPrecio());
+            psDetalle.addBatch();
+        }
+        psDetalle.executeBatch();
+
+        conn.commit();
+        JOptionPane.showMessageDialog(null, "Factura registrada con éxito. Total: $" + total);
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+ */
+

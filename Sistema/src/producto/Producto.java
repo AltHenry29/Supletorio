@@ -67,3 +67,20 @@ public class Producto extends JFrame {
     }
 }
 
+/*public Producto buscarProducto(String codigo) {
+    String sql = "SELECT * FROM productos WHERE codigo=?";
+    try (Connection conn = ConexionBD.conectar();
+         PreparedStatement ps = conn.prepareStatement(sql)) {
+        ps.setString(1, codigo);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            return new Producto(rs.getInt("id"), rs.getString("codigo"),
+                                rs.getString("nombre"), rs.getDouble("precio"),
+                                rs.getInt("stock"));
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return null;
+}
+ */
